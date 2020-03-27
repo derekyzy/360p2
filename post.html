@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" href="css/post.css"/>
+	<link type="text/css" rel="stylesheet" href="./css/login.css" />
+    <script type="text/javascript" src="js/login.js"></script>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Post</title>
+		
+
+	</head>
+
+	<body>
+
+		
+		
+		<div class="container">
+			<header>            
+				<h1 style="display: inline;padding: 0 0 0 0.4em">Post</h1>
+				
+			
+				<!-- main -->
+			<div class="main">
+				<a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
+				<p></p>
+				<a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+			</div>
+			
+			<!-- pop up window -->
+			<div class="mini_login" id="mini_login">
+				<!-- biaodan -->
+			<form action="" method="post">
+				<div class="item firstLine" id="firstLine">
+					<span class="login_title">Login</span>
+					<span class="login_close" id="close_minilogin">X</span>
+				</div>
+				<div class="item">
+					<label>user:</label>
+					<input type="text" name="uname" />
+				</div>
+				<div class="item">
+					<label>pass:</label>
+					<input type="password" name="upwd" />
+				</div>
+				<div class="item">
+					<a href="main.php" class="btn_login" onclick="">Login in Rightnow!</a>
+				</div>
+			</form>
+			</div>
+			<!-- cover -->
+			<div class="cover"></div>
+			
+			
+			
+			
+			
+			
+			
+			
+				<p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
+			</header>
+			
+			<div id="ask_t">
+			<img src="img/post_icon.png" alt="aaukku67uk67k" style="width:70px;height:70px">
+			<h1>Post：</h1>
+			</div>
+			
+			<form method="post" action="post.php">
+			<div>
+				<input id="question_box" type="text" name="title" placeholder="A single sentence to describe your post." />
+			</div>
+
+			<div>
+				<input id="detail_box" type="text" name="body" placeholder="write more details(optional):" />
+			</div>
+
+			<div>
+				<p>
+					<input type="radio" id="PE" name="type1" value="1">
+					<label for="PE">PE</label><br>
+					<input type="radio" id="Gaming" name="type1" value="2">
+					<label for="Gaming">Gaming</label><br>
+					<input type="radio" id="ask" name="type1" value="3">
+					<label for="ask">education</label><br>
+					<input type="radio" id="animation" name="type1" value="4">
+					<label for="animation">animation</label><br>
+				</p>
+			</div>
+			<div>
+				<p>
+					<input type="submit" name="po">
+				</p>
+			</div>
+
+
+		</div>
+	</form>
+
+
+
+		<footer>
+			<p id="c">
+				&copy; Copyright  by derekYang & leoChen
+			</p>
+		</footer>
+
+	</body>
+</html>
