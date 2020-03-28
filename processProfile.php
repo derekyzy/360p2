@@ -80,8 +80,9 @@ move_uploaded_file($filetmpname, $folder.$filename);
 
     }
 
-    $sql = "Insert Into login (username,password,nickname,forumLove,gender,age,imagename) Values ('$username','$password','$nickname','$forumLove','$gender','$age','$filename')";
+    $sql = "Update login Set username = '$username',password = '$password',nickname = '$nickname',forumLove = '$forumLove',gender = '$gender',age = '$age',imagename = '$filename' Where username = '$username'";
     $result = $pdo->exec($sql);
+    
 
     // $sql2 = "Select * from login";
     // $result = $pdo->query($sql2);
@@ -103,7 +104,7 @@ move_uploaded_file($filetmpname, $folder.$filename);
 
     closeConnection($pdo);
     
-    echo "<h3 style = 'padding: 0 0 0 5em'>You Have Registered Successfully</h3>";
+    echo "<h3 style = 'padding: 0 0 0 5em'>You Have Updated your information Successfully</h3>";
 
 ?>
 </body>

@@ -7,7 +7,7 @@
 </head> 
 <body>
 
-<form method="POST" action="processRegister.php">
+<form method="POST" action="processRegister.php" enctype="multipart/form-data">
     <fieldset>
         <legend>Registering Details</legend>
         <p>
@@ -42,6 +42,8 @@
             <input type="number" name="age" />
         </p>
         <p>
+            <label>Profile photo:</label>
+            <input type="file" name="uploadfile">
             <input type="submit" text="Submit"/>       <input type="reset" name="Reset"/>  
         </p>
         <a href = "main.php">

@@ -31,6 +31,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
     <p></p>
     <a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="profile.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Edit_Profile</a>
 </div>
 
 <!-- pop up window -->
