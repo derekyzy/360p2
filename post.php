@@ -25,7 +25,7 @@
    
     switch($type1){
         case 1:
-        header('Location: PE.html'); exit;break;
+        header('Location: PE.php'); exit;break;
         case 2:
         header('Location: gaming.html');exit;break;
         case 3:
