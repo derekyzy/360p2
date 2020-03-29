@@ -1,6 +1,17 @@
 <?php
 session_start();
 
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+} else {
+    echo "Please log in first to see this page.";
+}
+?>
+
+<a href="exit.php">Exit</a>
+
+<?php
+
 include 'db_connection.php';
 
 try{
@@ -65,7 +76,7 @@ $result = $pdo->query($sql);
 <div class="main">
     <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
     <p></p>
-    <a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
 </div>
 
 <!-- pop up window -->
@@ -122,14 +133,14 @@ $result = $pdo->query($sql);
         </p>
         <p>
             <label>Which forum are you mostly interested in?</label>
-            <input type="radio" name="forumLove" value="1"/>NBA
+            <input type="radio" name="forumLove" value="1" checked/>NBA
             <input type="radio" name="forumLove" value="2"/>Gaming
             <input type="radio" name="forumLove" value="3"/>Education
             <input type="radio" name="forumLove" value="4"/>Animation
         </p>
         <p>
             <label>Gender?</label>
-            <input type="radio" name="gender" value="1"/>Male
+            <input type="radio" name="gender" value="1" checked/>Male
             <input type="radio" name="gender" value="2"/>Female
             <input type="radio" name="gender" value="3"/>Can't tell
             

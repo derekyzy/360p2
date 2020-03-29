@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+} else {
+    echo "Please log in first to see this page.";
+}
+?>
+
+<a href="exit.php">Exit</a>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -15,7 +27,7 @@
 <div class="main">
     <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
     <p></p>
-    <a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
 </div>
 
 <!-- pop up window -->
@@ -54,12 +66,15 @@
 <body>
 <?php
 
+
     $username=$_POST['username'];
     $password=$_POST['password'];
     $nickname=$_POST['nickname'];
     $forumLove=$_POST['forumLove'];
     $gender=$_POST['gender'];
     $age=$_POST['age'];
+
+
 
     $filename = $_FILES['uploadfile']['name'];
 $filetmpname = $_FILES['uploadfile']['tmp_name'];
@@ -68,11 +83,18 @@ $folder = 'imagesuploadedf/';
 //function for saving the uploaded images in a specific folder
 move_uploaded_file($filetmpname, $folder.$filename);
 
+
+
+if(empty($username)|| empty($password)||empty($nickname)||empty($age)){
+    header('Location:http://localhost/360wb/register.php');}
+else{
+
+
     include 'db_connection.php';
 
     try{
         $pdo = openConnection();
-        echo "<h3 style = 'padding: 0 0 0 5em'>Conneted to the server</h3>";
+        echo "<h3 style = 'padding: 0 0 0 5em'>Conneted to the server $username</h3>";
 
     }catch (PDOException $e){
         echo "<h3 style = 'padding: 0 0 0 5em'>Connection failed</h3>";
@@ -104,6 +126,6 @@ move_uploaded_file($filetmpname, $folder.$filename);
     closeConnection($pdo);
     
     echo "<h3 style = 'padding: 0 0 0 5em'>You Have Registered Successfully</h3>";
-
+}
 ?>
 </body>

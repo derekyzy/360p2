@@ -1,4 +1,16 @@
 <?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+} else {
+    echo "Please log in first to see this page.";
+}
+?>
+
+<a href="exit.php">Exit</a>
+
+<?php
 //This code shows how to Upload And Insert Image Into Mysql Database Using Php Html.
 //connecting to uploadFile database.
 $conn = mysqli_connect("localhost", "root", "", "uploadFile");

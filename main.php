@@ -30,8 +30,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <div class="main">
     <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
     <p></p>
-    <a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
     <a href="profile.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Edit_Profile</a>
+    <a href="admin_page.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Admin</a>
 </div>
 
 <!-- pop up window -->
@@ -65,19 +66,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
 
-
     <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
 </header>
-<a href="admin_page.php" >admin</a>
+
 <main>
-    <a href = "PE.html"><p class = "left" >PE</p></a>   <a href = "animation.html" style="text-decoration: none;"><p class = "right" >Animation</p></a> 
-    <a href = "PE.html"><img class = "left" src="img/PE.jpg" alt="PE">  </a>  
+    <a href = "PE.php"><p class = "left" >PE</p></a>   <a href = "animation.php" style="text-decoration: none;"><p class = "right" >Animation</p></a> 
+    <a href = "PE.php"><img class = "left" src="img/PE.jpg" alt="PE">  </a>  
 
-    <a href = "animation.html"><img class = "r" src="img/mio.jpeg" alt="animation"> </a>   
-    <a href = "gaming.html"><p class = "left">Gaming</p></a>    <a href = "edu.html" style="text-decoration: none;"><p class = "right">Education</p></a>
-    <a href = "gaming.html"> <img class = "left" src="img/Gaming.jpg" alt="gaming"> </a>   
+    <a href = "animation.php"><img class = "r" src="img/mio.jpeg" alt="animation"> </a>   
+    <a href = "gaming.php"><p class = "left">Gaming</p></a>    <a href = "edu.php" style="text-decoration: none;"><p class = "right">Education</p></a>
+    <a href = "gaming.php"> <img class = "left" src="img/Gaming.jpg" alt="gaming"> </a>   
 
-    <a href = "edu.html"><img class = "r" src="img/educating.png" alt="education">    
+    <a href = "edu.php"><img class = "r" src="img/educating.png" alt="education">    
 </a>
 </main>
 

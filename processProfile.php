@@ -1,3 +1,15 @@
+<?php
+session_start();
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    echo "Welcome to the member's area, " . $_SESSION['username'] . "!";
+} else {
+    echo "Please log in first to see this page.";
+}
+?>
+
+<a href="exit.php">Exit</a>
+
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -15,7 +27,7 @@
 <div class="main">
     <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
     <p></p>
-    <a href="register.html" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
 </div>
 
 <!-- pop up window -->
@@ -68,6 +80,11 @@ $folder = 'imagesuploadedf/';
 //function for saving the uploaded images in a specific folder
 move_uploaded_file($filetmpname, $folder.$filename);
 
+
+if(empty($username)|| empty($password)||empty($nickname)||empty($age)){
+    header('Location:http://localhost/360wb/Profile.php');}
+else{
+
     include 'db_connection.php';
 
     try{
@@ -105,6 +122,6 @@ move_uploaded_file($filetmpname, $folder.$filename);
     closeConnection($pdo);
     
     echo "<h3 style = 'padding: 0 0 0 5em'>You Have Updated your information Successfully</h3>";
-
+}
 ?>
 </body>
