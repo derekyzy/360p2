@@ -68,6 +68,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
 </header>
+<a href="admin_page.php" >admin</a>
 <main>
     <a href = "PE.html"><p class = "left" >PE</p></a>   <a href = "animation.html" style="text-decoration: none;"><p class = "right" >Animation</p></a> 
     <a href = "PE.html"><img class = "left" src="img/PE.jpg" alt="PE">  </a>  
