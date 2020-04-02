@@ -148,16 +148,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
 
     <form method="post" action="">
-                 <p>search by email:</p>
-                 <div class="search-container">
-                 
-                  <input type="text" placeholder="Search.." name="search_email">
-                  <button type="submit" action="">submit</button>
-                     
-                 </div>
-     </form>
+    <!-- 千万不能删除，删了会有问题 -->
+    </form>
 
-      <form method="post" action="">
+
+
+
+    <form method="post" action="">
                  <p>search by post:</p>
                  <div class="search-container">
                  
@@ -167,6 +164,17 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                  </div>
     </form>
 
+
+
+    <form method="post" action="">
+                 <p>search by email:</p>
+                 <div class="search-container">
+                 
+                  <input type="text" placeholder="Search.." name="search_email">
+                  <button type="submit" action="">submit</button>
+                     
+                 </div>
+     </form>
 
 
      
