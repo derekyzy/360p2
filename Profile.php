@@ -111,7 +111,20 @@ $result = $pdo->query($sql);
 
 
 
-    <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
+    <a style = "padding: 0 0 0 0.8em" onclick="myFunction()">Home</a>
+
+<script>
+function myFunction() {
+  var txt;
+  var r = confirm("Are you sre you want to leave the page without saving?");
+  if (r == true) {
+    location.replace("main.php")
+  } else {
+  }
+  
+}
+</script>
+
 </header>
 
 <body>
@@ -153,7 +166,7 @@ $result = $pdo->query($sql);
         <p>
             <label>Profile photo:</label>
             <input type="file" name="uploadfile">
-            <input type="submit" text="Submit"/>       <input type="reset" name="Reset"/>  
+            <input type="submit" text="Submit"/>      
         </p>
         <a href = "main.php">
         <p style="float: right;">

@@ -84,7 +84,7 @@ try{
 }
 
 
-$sql = "Select username,password,nickname from login where username = '$username'";
+$sql = "Select username,password,nickname,ban from login where username = '$username'";
 
 $result = $pdo->query($sql);
 
@@ -93,14 +93,18 @@ $row = $result->fetch();
         $uname = $row['username'];
         $pwd = $row['password'];
         $nickname = $row['nickname'];
+        $ban = $row['ban'];
         session_start();
-        if($uname == $username && $pwd == $password){
+        if($uname == $username && $pwd == $password && $ban == 0){
             echo "<h3 style = 'padding: 0 0 0 5em'>You have logined '$username' successfully!</h3>";
             echo "<h3 style = 'padding: 0 0 0 5em'>Hi, $nickname!</h3>";
             echo "<h3 style = 'padding: 0 0 0 5em'>Enjoy your day!</h3>";
             $_SESSION['loggedin'] = true;
             $_SESSION['username'] = $username;
-        }else{
+        }else if(ban !=0){
+            echo "<h3 style = 'padding: 0 0 0 5em'>You have been banned! Ask the administrator for more information!</h3>";
+        }
+        else{
             echo "<h3 style = 'padding: 0 0 0 5em'>Username & Password not match! Please go back and try again!</h3>";
         }
     

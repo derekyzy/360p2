@@ -15,6 +15,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $title=$_POST['title'];
     $body=$_POST['body'];
     $type1=$_POST['type1'];
+    $username = $_SESSION['username'];
 
     include 'db_connection1.php';
 
@@ -26,14 +27,18 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         echo "<h3> Connection failed</h3>";
         die($e->getMessage());
     }
+    $sqlGetNickname = "Select nickname from login where username = '$username'";
+    $resultGetNickname =  $pdo->query($sqlGetNickname);
 
-    $sql="INSERT INTO post_info (nickName,type1,  title,body) VALUES ('a',$type1, '$title','$body')";
+    $row = $resultGetNickname->fetch();
+    $nickName = $row['nickname'];
+    
+
+    $sql="INSERT INTO post_info (nickName,type1,  title,body) VALUES ('$nickName',$type1, '$title','$body')";
     $result = $pdo->exec($sql);
    
     echo "<br/> Data should have been now inserted <br/>";
 
-    $sql="select * from artworks";
-    $result = $pdo->query($sql);
    
     switch($type1){
         case 1:

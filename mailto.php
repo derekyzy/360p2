@@ -11,7 +11,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <a href="exit.php">Exit</a>
 
 
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -75,21 +74,50 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
 </header>
 
-<main>
-    <a href = "PE.php"><p class = "left" >PE</p></a>   <a href = "animation.php" style="text-decoration: none;"><p class = "right" >Animation</p></a> 
-    <a href = "PE.php"><img class = "left" src="img/PE.jpg" alt="PE">  </a>  
 
-    <a href = "animation.php"><img class = "r" src="img/mio.jpeg" alt="animation"> </a>   
-    <a href = "gaming.php"><p class = "left">Gaming</p></a>    <a href = "edu.php" style="text-decoration: none;"><p class = "right">Education</p></a>
-    <a href = "gaming.php"> <img class = "left" src="img/Gaming.jpg" alt="gaming"> </a>   
+<?php
+// Contact subject
+$subject = 'Recovery Email';
+// Details
+$message= 'Your password has been reset to 123, please use this new password to login again!';
+//echo $subject;
+// Mail of sender
+$mail_from='maverickxiaozi@gmail.com';
+$username=$_POST['username'];
 
-    <a href = "edu.php"><img class = "r" src="img/educating.png" alt="education">    
-</a>
-</main>
+if(empty($username)){
+    header('Location:http://localhost/360wb/emailRecovery.php');
+}else{
+
+    include 'db_connection.php';
+
+    try{
+        $pdo = openConnection();
+        echo "<h3 style = 'padding: 0 0 0 5em'>Conneted to the server $username</h3>";
+
+    }catch (PDOException $e){
+        echo "<h3 style = 'padding: 0 0 0 5em'>Connection failed</h3>";
+        die($e->getMessage());
+
+    }
+
+    $sql = "Update login Set password = '123' Where username = '$username'";
+    $result = $pdo->exec($sql);
 
 
 
+// From
+//$header="from: $name <$mail_from>";
+// Enter your email address
+$to =$_REQUEST['username'];
+$send_contact=mail($to,$subject,$message);
+// Check, if message sent to your email
+if($send_contact){
+echo "<h3 style = 'padding: 0 0 0 5em'>The recovery email has been sent to '$username'</h3>";
+}
+else {
+echo "ERROR";
+}
 
-
-
-</body>
+}
+?>

@@ -28,49 +28,57 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 	</head>
 
 	<header>            
-		<h1 style="display: inline;padding: 0 0 0 0.4em">Education Forum</h1>
-		
-	
-		<!-- main -->
-	<div class="main">
-		<a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
-		<p></p>
-		<a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
-	</div>
-	
-	<!-- pop up window -->
-	<div class="mini_login" id="mini_login">
-		<!-- biaodan -->
-	<form action="" method="post">
-		<div class="item firstLine" id="firstLine">
-			<span class="login_title">Login</span>
-			<span class="login_close" id="close_minilogin">X</span>
-		</div>
-		<div class="item">
-			<label>user:</label>
-			<input type="text" name="uname" />
-		</div>
-		<div class="item">
-			<label>pass:</label>
-			<input type="password" name="upwd" />
-		</div>
-		<div class="item">
-			<a href="main.php" class="btn_login" onclick="">Login in Rightnow!</a>
-		</div>
-	</form>
-	</div>
-	<!-- cover -->
-	<div class="cover"></div>
-	
-	
-	
-	
-	
-	
-	
-	
-		<p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
-	</header>
+    <h1 style="display: inline;padding: 0 0 0 0.4em">Forum</h1>
+    
+
+    <!-- main -->
+<div class="main">
+    <a style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Login</a>
+    <p></p>
+    <a href="register.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Register</a>
+    <a href="profile.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Edit_Profile</a>
+    <a href="admin_page.php" style="margin-right: 2em;" href="javascript:void(0)" class="btn_login" id="btn_showlogin">Admin</a>
+</div>
+
+<!-- pop up window -->
+<div class="mini_login" id="mini_login">
+    <!-- biaodan -->
+<form action="processLogin.php" method="post">
+    <div class="item firstLine" id="firstLine">
+        <span class="login_title">Login</span>
+        <span class="login_close" id="close_minilogin">X</span>
+    </div>
+    <div class="item">
+        <label>user:</label>
+        <input type="text" name="username" />
+    </div>
+    <div class="item">
+        <label>pass:</label>
+        <input type="password" name="password" />
+    </div>
+    <div class="item" style = 'padding: 0 0 0 6em'>
+        <input  type="submit" text="Login in Rightnow!" class="btn_login" /> 
+    </div>
+</form>
+
+<form action="emailRecovery.php" method="post">
+    <div class="item" style = 'padding: 0 0 0 6em'>
+        <input  type="submit" value = "I forget the password" text="Login in Rightnow!" class="btn_login" /> 
+    </div>    
+</form>
+
+</div>
+<!-- cover -->
+<div class="cover"></div>
+
+
+
+
+
+
+
+    <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
+</header>
 		
 
 	<body>

@@ -11,7 +11,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <a href="exit.php">Exit</a>
 
 
-
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -75,21 +74,13 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <p style = "padding: 0 0 0 0.8em"><a href="main.php">Home</a></p>
 </header>
 
-<main>
-    <a href = "PE.php"><p class = "left" >PE</p></a>   <a href = "animation.php" style="text-decoration: none;"><p class = "right" >Animation</p></a> 
-    <a href = "PE.php"><img class = "left" src="img/PE.jpg" alt="PE">  </a>  
-
-    <a href = "animation.php"><img class = "r" src="img/mio.jpeg" alt="animation"> </a>   
-    <a href = "gaming.php"><p class = "left">Gaming</p></a>    <a href = "edu.php" style="text-decoration: none;"><p class = "right">Education</p></a>
-    <a href = "gaming.php"> <img class = "left" src="img/Gaming.jpg" alt="gaming"> </a>   
-
-    <a href = "edu.php"><img class = "r" src="img/educating.png" alt="education">    
-</a>
-</main>
-
-
-
-
-
-
-</body>
+<form action="mailto.php" method="post">
+    <div class="item">
+        <label style="padding: 0 0 0 3em; font-size:1.6em">Username (Email Address):</label>
+        <input type="email" name="username" />
+    </div>
+    <p></p>
+    <div class="item" style = 'padding: 0 0 0 16em; font-size:1.6em'>
+        <input  type="submit" value = "Send Recovery Email" text="Login in Rightnow!" class="btn_login" /> 
+    </div>    
+</form>
